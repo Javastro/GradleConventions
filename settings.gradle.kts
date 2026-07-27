@@ -1,1 +1,6 @@
-rootProject.name = "idiomatic-gradle"
+rootProject.name = "GradleConventions"
+dependencyResolutionManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
