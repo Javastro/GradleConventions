@@ -84,15 +84,17 @@ publishing {
 
 extra["isReleaseVersion"] = !version.toString().endsWith("SNAPSHOT")
 
+val signPropertyProvider: Provider<String> = providers.systemProperty("skipSigning")
+
 signing {
     useGpgCmd()
     sign(publishing.publications["maven"])
-
 }
-
 tasks.withType<Sign>().configureEach {
-    onlyIf("isReleaseVersion is set") { project.extra["isReleaseVersion"] as Boolean }
+
+    onlyIf("skipSigning is not set") { project.extra["isReleaseVersion"] as Boolean && signPropertyProvider.orNull == null  }
 }
+
 
 
 //TODO really want to get the git information automatically into POM - this is to experiment...
