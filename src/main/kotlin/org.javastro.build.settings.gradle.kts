@@ -14,6 +14,6 @@ dependencyResolutionManagement {
 }
 
 // all directories with a 'build.gradle.kts' are modules (subprojects) of the build
-rootDir.listFiles()?.filter { folder -> File(folder, "build.gradle.kts").exists() }?.forEach {
+rootDir.listFiles()?.filter { folder -> folder.isDirectory && folder.name != "buildSrc" && File(folder, "build.gradle.kts").exists() }?.forEach {
     include(it.name)
 }
