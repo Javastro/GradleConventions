@@ -13,6 +13,7 @@ dependencies {
     implementation("org.gradlex:jvm-dependency-conflict-resolution:2.5")
     implementation("org.gradlex:reproducible-builds:1.1")
     implementation("org.eclipse.jgit:org.eclipse.jgit:7.5.0.202512021534-r")
+    implementation("org.kordamp.gradle.jandex:org.kordamp.gradle.jandex.gradle.plugin:2.3.0")
     implementation("io.quarkus:io.quarkus.gradle.plugin:$quarkusVersion")
 //    implementation("io.mvnpm.gradle.plugin:native-java-plugin:1.0.0") needs Java 21
 }
