@@ -45,6 +45,7 @@ tasks.withType<QuarkusTask>().configureEach {
     // pick up credentials from environment in uniform way
     val harborUsername = (findProperty("uksrcHarborUsername") ?: System.getenv("UKSRC_HARBOR_USERNAME")) as String
     val harborPassword = (findProperty("uksrcHarborPassword") ?: System.getenv("UKSRC_HARBOR_PASSWORD") ) as String
+    setSystemPropertyIfNot("quarkus.docker.buildx.platform", "linux/amd64,linux/arm64")
     setSystemPropertyIfNot("quarkus.container-image.registry", "images.dev.uksrc.org")
     setSystemPropertyIfNot("quarkus.container-image.group", "javastro")
     setSystemPropertyIfNot("quarkus.container-image.username", harborUsername)
