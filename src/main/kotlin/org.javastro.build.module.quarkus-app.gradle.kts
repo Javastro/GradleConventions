@@ -32,7 +32,7 @@ dependencies {
 
 //as properties are the highest level of config setting only set if not already set (this would be from command line)
 fun setSystemPropertyIfNot(name: String, value: String?) {
-    if (System.getProperty(name) == null) {
+    if (System.getProperty(name) == null && value != null) {
         System.setProperty(name, value)
     }
 }
