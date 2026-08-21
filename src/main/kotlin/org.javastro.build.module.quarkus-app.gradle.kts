@@ -67,7 +67,7 @@ tasks.withType<QuarkusTask>().configureEach {
 
     // helm - Note that because of non-support of OCI - the helm commandline needs to be used instead for pushing.
     setSystemPropertyIfNot("quarkus.helm.repository.url", "oci://images.dev.uksrc.org/helm")
-    setSystemPropertyIfNot("quarkus.helm.repository.type", "OCI") //FIXME -the helm extension cannot actually do this https://github.com/quarkiverse/quarkus-helm/issues/371
+  //  setSystemPropertyIfNot("quarkus.helm.repository.type", "OCI") //FIXME -the helm extension cannot actually do this https://github.com/quarkiverse/quarkus-helm/issues/371
     setSystemPropertyIfNot("quarkus.helm.repository.username", harborUsername)
     setSystemPropertyIfNot("quarkus.helm.repository.password", harborPassword)
     setSystemPropertyIfNot("quarkus.helm.repository.push", "false") // however do not push by default
