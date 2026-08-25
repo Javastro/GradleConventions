@@ -11,7 +11,7 @@ group = "org.javastro.gradle"
 
 scmVersion {
     hooks {
-        post (
+        pre (
             "fileUpdate", mapOf(
                 "encoding" to "UTF-8",
                 "file" to rootDir.resolve("README.md").toString(),
@@ -19,8 +19,8 @@ scmVersion {
                 "replacement" to KotlinClosure2<String, HookContext, String>({ v, c -> "version \"${v}\"" })
             )
         )
-        post("commit" , KotlinClosure2<String,ScmPosition,String>({ v, p-> "Updating README for version ${v}" }))
-
+        pre("commit" , KotlinClosure2<String,ScmPosition,String>({ v, p-> "Updating README for version ${v}" }))
+        pre("push")
     }
 }
 version = scmVersion.version
