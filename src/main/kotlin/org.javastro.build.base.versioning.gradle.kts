@@ -1,4 +1,5 @@
 // The version of the product itself is read from the 'version.txt' file in the projectdir of a product.
+// N.B this way of versioning is now deprecated in javastro projects.
 val versionFile = File(projectDir, "version.txt")
 val rootFile = File(rootDir, "version.txt")
 if(version == "unspecified") {

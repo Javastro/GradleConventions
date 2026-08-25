@@ -3,7 +3,7 @@ import io.quarkus.gradle.tasks.QuarkusTask
 plugins {
     java
     id("io.quarkus")
-    id("org.javastro.build.base.versioning")
+    id("org.javastro.build.base.versioning-semver")
     id("org.javastro.build.base.quarkus-version")
     id("org.javastro.build.base.dependency-rules")
     id("org.javastro.build.feature.compilation")
