@@ -7,7 +7,7 @@ To use these conventions then in the top level `settings.gradle.kts` file of the
 
 ```kotlin
 plugins {
-    id("org.javastro.build") version "0.2.3"
+    id("org.javastro.build") version "0.2.4"
 }
 ```
 
