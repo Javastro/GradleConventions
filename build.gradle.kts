@@ -14,7 +14,7 @@ scmVersion {
             "fileUpdate", mapOf(
                 "encoding" to "UTF-8",
                 "file" to rootDir.resolve("README.md").toString(),
-                "pattern" to KotlinClosure2<String, HookContext, String>({ v, c -> "/version +\"${v}\"/" }),
+                "pattern" to KotlinClosure2<String, HookContext, String>({ v, c -> "version +\"${v}\"" }),
                 "replacement" to KotlinClosure2<String, HookContext, String>({ v, c -> "version \"${v}\"" })
             )
         )
