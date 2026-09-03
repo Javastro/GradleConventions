@@ -23,7 +23,7 @@ dependencies {
     implementation("io.quarkus:quarkus-kubernetes")
     implementation("io.quarkus:quarkus-container-image-docker")
     implementation("io.quarkiverse.helm:quarkus-helm:1.4.2")
-    implementation("org.javastro.ivoa.core.quarkus:quarkus-config:0.1.0-SNAPSHOT")
+    implementation("org.javastro.ivoa.core.quarkus:quarkus-config:0.1.0")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
     compileOnly("org.osgi:org.osgi.annotation.bundle:2.0.0") // adding this to get rid of some compile time OGSI warnings that are not relevant to quarkus
