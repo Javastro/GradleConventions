@@ -2,18 +2,6 @@ plugins {
     id("java")
 }
 
-repositories {
-    mavenCentral()
-    mavenLocal()
-    maven {
-        url= uri("https://central.sonatype.com/repository/maven-snapshots/")
-    }
-
-    maven {
-        url= uri("https://repo.dev.uksrc.org/repository/maven-public/")
-    }
-
-}
 
 //probably nice to do something more sophisticated like https://github.com/jjohannes/idiomatic-gradle/blob/main/gradle-conventions/src/main/kotlin/com.example.idiomatic.gradle.build.base.dependency-rules.gradle.kts
 dependencies {
