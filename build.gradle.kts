@@ -4,7 +4,7 @@ import pl.allegro.tech.build.axion.release.domain.scm.ScmPosition
 plugins {
     `kotlin-dsl`
     `maven-publish`
-    id("pl.allegro.tech.build.axion-release") version "1.21.3"
+    id("pl.allegro.tech.build.axion-release") version "1.21.4"
 }
 
 group = "org.javastro.gradle"
@@ -34,7 +34,7 @@ dependencies {
     implementation("org.eclipse.jgit:org.eclipse.jgit:7.5.0.202512021534-r")
     implementation("org.kordamp.gradle.jandex:org.kordamp.gradle.jandex.gradle.plugin:2.3.0")
     implementation("io.quarkus:io.quarkus.gradle.plugin:$quarkusVersion")
-    implementation("pl.allegro.tech.build.axion-release:pl.allegro.tech.build.axion-release.gradle.plugin:1.21.3") // solid for tag based versioning
+    implementation("pl.allegro.tech.build.axion-release:pl.allegro.tech.build.axion-release.gradle.plugin:1.21.4") // solid for tag based versioning
     implementation("com.github.jmongard.git-semver-plugin:com.github.jmongard.git-semver-plugin.gradle.plugin:0.19.5") // versions from tags - not quite ready for multi version monorepos
 
 //    implementation("io.mvnpm.gradle.plugin:native-java-plugin:1.0.0") needs Java 21
