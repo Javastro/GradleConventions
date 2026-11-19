@@ -35,6 +35,9 @@ dependencies {
     implementation("io.quarkus:io.quarkus.gradle.plugin:$quarkusVersion")
     implementation("pl.allegro.tech.build.axion-release:pl.allegro.tech.build.axion-release.gradle.plugin:1.21.4") // solid for tag based versioning
     implementation("com.github.jmongard.git-semver-plugin:com.github.jmongard.git-semver-plugin.gradle.plugin:0.19.5") // versions from tags - not quite ready for multi version monorepos
+    implementation("org.semver4j:semver4j:6.0.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
 //    implementation("io.mvnpm.gradle.plugin:native-java-plugin:1.0.0") needs Java 21
 }

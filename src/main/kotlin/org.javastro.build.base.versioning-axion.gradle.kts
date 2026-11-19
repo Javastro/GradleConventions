@@ -22,8 +22,6 @@ scmVersion {
             )
         )
         pre("commit" , KotlinClosure2<String,ScmPosition,String>({ v, p-> "Updating README for version ${v}" }))
-        pre("push")
-
     }
 }
 

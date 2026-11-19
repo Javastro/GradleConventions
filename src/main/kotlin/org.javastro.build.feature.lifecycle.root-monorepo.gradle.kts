@@ -45,4 +45,43 @@ if (!subprojects.isEmpty()) {
         }
     }
 
+    val publishnew = tasks.register("publishnew") {
+        group = "publishing"
+        description = "Publishes subproject artifacts only when their version is newer than the destination repository."
+    }
+
+    subprojects {
+        plugins.withId("maven-publish") {
+            tasks.withType<PublishToMavenRepository>().all {
+                val publishTask = this
+                publishnew.configure {
+                    dependsOn(publishTask)
+                }
+                onlyIf("the publication is newer than the destination repository when using publishnew") {
+                    if (!gradle.taskGraph.hasTask(publishnew.get())) {
+                        true
+                    } else {
+                        val publication = publishTask.publication
+                        val repository = publishTask.repository
+                        val credentials = repository.credentials
+                        val newer = PublishedVersions.isNewer(
+                            repository.url,
+                            publication.groupId,
+                            publication.artifactId,
+                            publication.version,
+                            credentials.username,
+                            credentials.password
+                        )
+                        logger.lifecycle(
+                            "${if (newer) "Publishing" else "Skipping"} " +
+                                    "${publication.groupId}:${publication.artifactId}:${publication.version} " +
+                                    "in ${repository.name}"
+                        )
+                        newer
+                    }
+                }
+            }
+        }
+    }
+
 }

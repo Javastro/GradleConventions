@@ -72,7 +72,25 @@ will show the current (computed) version for each component.
 ```shell
 ./gradlew release -Prelease.dryRun
 ```
-will show what will happen if you try to release
+will show what will happen if you try to release.
+
+To perform a release in a monorepo with multiple subprojects you should use the `createRelease` task in the root project - need to disable the remotecheck for this as there are update to readmes during this process that will cause the remote check to fail. The `createRelease` task will create a tag for each subproject.
+
+```shell
+./gradlew cR -Prelease.disableRemoteCheck
+```
+
+then you can do a publish for the subprojects that have a new release with
+
+```shell
+./gradlew publishnew
+```
+
+then if all successful do 
+
+```shell
+git push
+```
 
 ### Quarkus Apps
 
