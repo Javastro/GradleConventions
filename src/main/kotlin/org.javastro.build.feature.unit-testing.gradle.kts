@@ -1,6 +1,7 @@
 // configure aspects of Unit Testing
 plugins {
     id("java")
+    id("jacoco")
 }
 
 
